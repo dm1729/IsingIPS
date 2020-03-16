@@ -5,6 +5,7 @@ A <- IsingDesign(n-1) #Gives sign patterns which will be used for elemntwise mul
 N <- length(X[,1]) #Returns sample size
 Y <- matrix(0,nrow=2^(n-1),ncol=2^n)
 S <-matrix(0,nrow=2^(n-1),ncol=n)
+L <- rep(0,2^(n-1)) #ADDED AFTER SENDING R PACKAGE
 for (i in c(1:2^(n-1)) ){
   S[i,] <- c(1,A[i,]) #Creates 'sign flipper' vector. Never flip first one as only need to do half of possible flips
   Z <- t(t(X)*S[i,]) #Multiplies by sign flipper
